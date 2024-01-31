@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+
+        <h1>Vous êtes sur une page privée</h1>
+        {% for curentUser in listOfUsers %}
+
+        <table>
+            <tr>
+                <th>Mail</th>
+                <th>Rôle</th>
+            </tr>
+            <tr>
+                <td>{{ curentUser.email }}</td>
+                <td>{{ curentUser.roles[0] }}</td>
+            </tr>
+{#            <tr>#}
+{#                <td>Centro comercial Moctezuma</td>#}
+{#                <td>Francisco Chang</td>#}
+{#                <td>Mexico</td>#}
+{#            </tr>#}
+        </table>
+        {% endfor %}
+
+    </div>
+{% endblock %}
